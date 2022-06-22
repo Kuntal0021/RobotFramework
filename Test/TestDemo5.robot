@@ -2,7 +2,7 @@
 Documentation    This page is for testing
 
 Library    SeleniumLibrary
-Library    DataDriver       file=Resources/data.csv     encoding=utf_8
+#Library    DataDriver       file=Resources/data.csv     encoding=utf_8
 
 Test Setup     Run Keywords     Open Browser    https://rahulshettyacademy.com/loginpagePractise/     chrome
                ...     AND      maximize browser window

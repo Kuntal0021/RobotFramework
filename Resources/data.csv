@@ -1,0 +1,4 @@
+*** Test Cases ***,${uname},${pword},${Error_Message_Displayed}
+Invalid UserName,Kuntal,learning,Incorrect username/password.
+Invalid Password,rahulshetty,Learning,Incorrect username/password.
+Sucess Login,rahulshetty,learning,Success

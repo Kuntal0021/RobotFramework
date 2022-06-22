@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.8.8 on win32)" generated="20220617 03:18:28.604" rpa="false" schemaversion="2">
+<suite id="s1" name="TestDemo2" source="D:\Robot Framework\Test\TestDemo2.robot">
+<test id="s1-t1" name="Validate Unsuccessful Login">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<arg>AND</arg>
+<arg>maximize browser window</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220617 03:18:29.478" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20220617 03:18:29.477" endtime="20220617 03:18:36.918"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220617 03:18:36.918" endtime="20220617 03:18:37.533"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:29.477" endtime="20220617 03:18:37.533"/>
+</kw>
+<kw name="Login To RahulShetty" library="Resources">
+<arg>${User}</arg>
+<arg>${WPass}</arg>
+<arg>${Failure}</arg>
+<doc>Keyword used for Login</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username}</arg>
+<arg>${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:37.537" level="INFO">Typing text 'rahulshettyacademy' into text field 'username'.</msg>
+<status status="PASS" starttime="20220617 03:18:37.535" endtime="20220617 03:18:38.502"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>${pword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:38.503" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20220617 03:18:38.782" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220617 03:18:38.985" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220617 03:18:38.502" endtime="20220617 03:18:38.985"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${TnC}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:38.986" level="INFO">Selecting checkbox 'terms'.</msg>
+<status status="PASS" starttime="20220617 03:18:38.986" endtime="20220617 03:18:39.432"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SignIn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:39.433" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20220617 03:18:39.432" endtime="20220617 03:18:39.602"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool}</var>
+<arg>Capture Error Message</arg>
+<arg>${Error_Message_Displayed}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Capture Error Message" library="Resources">
+<arg>${Error_Message_Displayed}</arg>
+<doc>This Keyword will capture Error Message</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Error}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220617 03:18:39.604" endtime="20220617 03:18:41.664"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error_Message}</var>
+<arg>${Error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:41.999" level="INFO">${Error_Message} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20220617 03:18:41.665" endtime="20220617 03:18:41.999"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error_Message}</arg>
+<arg>${Error_Message_Displayed}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220617 03:18:42.000" endtime="20220617 03:18:42.001"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Error_Message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:18:42.002" level="INFO">Incorrect username/password.</msg>
+<status status="PASS" starttime="20220617 03:18:42.001" endtime="20220617 03:18:42.002"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:39.603" endtime="20220617 03:18:42.003"/>
+</kw>
+<msg timestamp="20220617 03:18:42.003" level="INFO">${bool} = True</msg>
+<status status="PASS" starttime="20220617 03:18:39.602" endtime="20220617 03:18:42.004"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${bool}</arg>
+<arg>Log</arg>
+<arg>Unsuccessful Login</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Successful Login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Unsuccessful Login</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:18:42.006" level="INFO">Unsuccessful Login</msg>
+<status status="PASS" starttime="20220617 03:18:42.005" endtime="20220617 03:18:42.006"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:42.004" endtime="20220617 03:18:42.006"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:37.534" endtime="20220617 03:18:42.008"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220617 03:18:42.009" endtime="20220617 03:18:48.705"/>
+</kw>
+<doc>Test Case for Login</doc>
+<tag>SmokeDemo</tag>
+<status status="PASS" starttime="20220617 03:18:29.475" endtime="20220617 03:18:48.706"/>
+</test>
+<doc>This page is for testing</doc>
+<status status="PASS" starttime="20220617 03:18:28.723" endtime="20220617 03:18:48.708"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SmokeDemo</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestDemo2">TestDemo2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

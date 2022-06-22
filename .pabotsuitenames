@@ -1,0 +1,9 @@
+datasources:9aa587ec3662ec0d3df1b713a848f8c289a89cd2
+commandlineoptions:1a02761545ba3b55d38b9ab973430f7869d89ffc
+suitesfrom:no-suites-from-option
+file:b00d9ce45d0482c1dd2931c92f72785114c44aa5
+--test TestDemo2.Validate Login
+--test TestDemo2.Validate Login As A User
+--test TestDemo2.Validate Login Collections
+--test TestDemo2.Validate Unsuccessful Login
+--test TestDemo2.Add TO Cart

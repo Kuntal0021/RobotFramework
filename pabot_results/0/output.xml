@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.8.8 on win32)" generated="20220617 03:18:28.787" rpa="false" schemaversion="2">
+<suite id="s1" name="TestDemo2" source="D:\Robot Framework\Test\TestDemo2.robot">
+<test id="s1-t1" name="Validate Login">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<arg>AND</arg>
+<arg>maximize browser window</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220617 03:18:29.674" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20220617 03:18:29.673" endtime="20220617 03:18:37.504"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220617 03:18:37.505" endtime="20220617 03:18:37.925"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:29.672" endtime="20220617 03:18:37.926"/>
+</kw>
+<kw name="Login To RahulShetty" library="Resources">
+<arg>${User}</arg>
+<arg>${Pass}</arg>
+<arg>${Success}</arg>
+<doc>Keyword used for Login</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username}</arg>
+<arg>${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:37.929" level="INFO">Typing text 'rahulshettyacademy' into text field 'username'.</msg>
+<status status="PASS" starttime="20220617 03:18:37.928" endtime="20220617 03:18:38.715"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>${pword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:38.717" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20220617 03:18:38.902" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220617 03:18:39.248" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220617 03:18:38.716" endtime="20220617 03:18:39.248"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${TnC}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:39.250" level="INFO">Selecting checkbox 'terms'.</msg>
+<status status="PASS" starttime="20220617 03:18:39.249" endtime="20220617 03:18:39.588"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SignIn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:39.590" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20220617 03:18:39.588" endtime="20220617 03:18:39.761"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool}</var>
+<arg>Capture Error Message</arg>
+<arg>${Error_Message_Displayed}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Capture Error Message" library="Resources">
+<arg>${Error_Message_Displayed}</arg>
+<doc>This Keyword will capture Error Message</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Error}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220617 03:19:05.419" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220617 03:19:05.425" level="FAIL">Element '//div[@class="alert alert-danger col-md-12"]' not visible after 3 seconds.</msg>
+<status status="FAIL" starttime="20220617 03:18:39.764" endtime="20220617 03:19:05.425"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error_Message}</var>
+<arg>${Error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220617 03:19:05.426" endtime="20220617 03:19:05.427"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error_Message}</arg>
+<arg>${Error_Message_Displayed}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220617 03:19:05.427" endtime="20220617 03:19:05.427"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Error_Message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220617 03:19:05.428" endtime="20220617 03:19:05.428"/>
+</kw>
+<status status="FAIL" starttime="20220617 03:18:39.763" endtime="20220617 03:19:05.430"/>
+</kw>
+<msg timestamp="20220617 03:19:05.431" level="INFO">${bool} = False</msg>
+<status status="PASS" starttime="20220617 03:18:39.762" endtime="20220617 03:19:05.431"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${bool}</arg>
+<arg>Log</arg>
+<arg>Unsuccessful Login</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Successful Login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Successful Login</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:19:05.434" level="INFO">Successful Login</msg>
+<status status="PASS" starttime="20220617 03:19:05.433" endtime="20220617 03:19:05.434"/>
+</kw>
+<status status="PASS" starttime="20220617 03:19:05.432" endtime="20220617 03:19:05.434"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:37.926" endtime="20220617 03:19:05.435"/>
+</kw>
+<kw name="Validate Card Titles" library="Resources">
+<arg>@{Items}</arg>
+<doc>This Keyword will validate Card Titles</doc>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${Locators}</var>
+<arg>${Card_Titles_Locators}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220617 03:19:05.458" level="INFO">${Locators} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="836cdc20-3576-48f7-b8de-4f4d78438a77")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220617 03:19:05.436" endtime="20220617 03:19:05.458"/>
+</kw>
+<for flavor="IN ZIP">
+<var>${CT}</var>
+<var>${CTL}</var>
+<value>${Card_Titles}</value>
+<value>${Locators}</value>
+<iter>
+<var name="${CT}">iphone X</var>
+<var name="${CTL}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="836cdc20-3576-48f7-b8de-4f4d78438a77")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${CTL.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:19:05.495" level="INFO">iphone X</msg>
+<status status="PASS" starttime="20220617 03:19:05.460" endtime="20220617 03:19:05.496"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${CTL}</arg>
+<arg>${CT}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220617 03:19:05.498" level="INFO">Verifying element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="836cdc20-3576-48f7-b8de-4f4d78438a77")&gt;' contains exact text 'iphone X'.</msg>
+<status status="PASS" starttime="20220617 03:19:05.496" endtime="20220617 03:19:05.512"/>
+</kw>
+<status status="PASS" starttime="20220617 03:19:05.459" endtime="20220617 03:19:05.512"/>
+</iter>
+<iter>
+<var name="${CT}">Samsung Note 8</var>
+<var name="${CTL}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="8d031cd7-50d4-4320-91b9-265b11c0e86b")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${CTL.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:19:05.542" level="INFO">Samsung Note 8</msg>
+<status status="PASS" starttime="20220617 03:19:05.513" endtime="20220617 03:19:05.542"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${CTL}</arg>
+<arg>${CT}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220617 03:19:05.543" level="INFO">Verifying element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="8d031cd7-50d4-4320-91b9-265b11c0e86b")&gt;' contains exact text 'Samsung Note 8'.</msg>
+<status status="PASS" starttime="20220617 03:19:05.542" endtime="20220617 03:19:05.557"/>
+</kw>
+<status status="PASS" starttime="20220617 03:19:05.512" endtime="20220617 03:19:05.558"/>
+</iter>
+<iter>
+<var name="${CT}">Nokia Edge</var>
+<var name="${CTL}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="7f5b7d7e-f597-45a4-b197-89ea899e14f2")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${CTL.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:19:05.578" level="INFO">Nokia Edge</msg>
+<status status="PASS" starttime="20220617 03:19:05.559" endtime="20220617 03:19:05.578"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${CTL}</arg>
+<arg>${CT}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220617 03:19:05.579" level="INFO">Verifying element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="7f5b7d7e-f597-45a4-b197-89ea899e14f2")&gt;' contains exact text 'Nokia Edge'.</msg>
+<status status="PASS" starttime="20220617 03:19:05.578" endtime="20220617 03:19:05.595"/>
+</kw>
+<status status="PASS" starttime="20220617 03:19:05.558" endtime="20220617 03:19:05.595"/>
+</iter>
+<iter>
+<var name="${CT}">Blackberry</var>
+<var name="${CTL}">&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="95658a9d-faab-469c-bfce-39c2129646a7")&gt;</var>
+<kw name="Log" library="BuiltIn">
+<arg>${CTL.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:19:05.624" level="INFO">Blackberry</msg>
+<status status="PASS" starttime="20220617 03:19:05.596" endtime="20220617 03:19:05.625"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${CTL}</arg>
+<arg>${CT}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220617 03:19:05.626" level="INFO">Verifying element '&lt;selenium.webdriver.remote.webelement.WebElement (session="f1565fe2911afc820e927915e2276ea8", element="95658a9d-faab-469c-bfce-39c2129646a7")&gt;' contains exact text 'Blackberry'.</msg>
+<status status="PASS" starttime="20220617 03:19:05.625" endtime="20220617 03:19:05.638"/>
+</kw>
+<status status="PASS" starttime="20220617 03:19:05.595" endtime="20220617 03:19:05.639"/>
+</iter>
+<status status="PASS" starttime="20220617 03:19:05.458" endtime="20220617 03:19:05.639"/>
+</for>
+<status status="PASS" starttime="20220617 03:19:05.435" endtime="20220617 03:19:05.639"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220617 03:19:05.639" endtime="20220617 03:19:08.370"/>
+</kw>
+<doc>Test Case for Login</doc>
+<tag>SmokeDemo</tag>
+<status status="PASS" starttime="20220617 03:18:29.670" endtime="20220617 03:19:08.371"/>
+</test>
+<doc>This page is for testing</doc>
+<status status="PASS" starttime="20220617 03:18:28.881" endtime="20220617 03:19:08.373"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SmokeDemo</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestDemo2">TestDemo2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

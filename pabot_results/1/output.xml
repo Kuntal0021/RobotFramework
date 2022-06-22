@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.8.8 on win32)" generated="20220617 03:18:28.979" rpa="false" schemaversion="2">
+<suite id="s1" name="TestDemo2" source="D:\Robot Framework\Test\TestDemo2.robot">
+<test id="s1-t1" name="Validate Login As A User">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<arg>AND</arg>
+<arg>maximize browser window</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220617 03:18:29.776" level="INFO">Opening browser 'chrome' to base url 'https://rahulshettyacademy.com/loginpagePractise/'.</msg>
+<status status="PASS" starttime="20220617 03:18:29.774" endtime="20220617 03:18:36.674"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220617 03:18:36.675" endtime="20220617 03:18:37.296"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:29.773" endtime="20220617 03:18:37.297"/>
+</kw>
+<kw name="Login To RahulShetty As User" library="Resources">
+<arg>${User}</arg>
+<arg>${Pass}</arg>
+<arg>${User_Type}</arg>
+<arg>${Success}</arg>
+<doc>Keyword used for Login</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Username}</arg>
+<arg>${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:37.300" level="INFO">Typing text 'rahulshettyacademy' into text field 'username'.</msg>
+<status status="PASS" starttime="20220617 03:18:37.299" endtime="20220617 03:18:37.987"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Password}</arg>
+<arg>${pword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:37.989" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20220617 03:18:38.086" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220617 03:18:38.201" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220617 03:18:37.987" endtime="20220617 03:18:38.202"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${TnC}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:38.203" level="INFO">Selecting checkbox 'terms'.</msg>
+<status status="PASS" starttime="20220617 03:18:38.202" endtime="20220617 03:18:38.346"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${User_Types}</arg>
+<arg>${User_Value}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20220617 03:18:38.348" level="INFO">Selecting 'user' from radio button 'radio'.</msg>
+<status status="PASS" starttime="20220617 03:18:38.346" endtime="20220617 03:18:38.488"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Pop_up}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220617 03:18:38.489" endtime="20220617 03:18:38.834"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Okay_Option}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:38.835" level="INFO">Clicking button 'okayBtn'.</msg>
+<status status="PASS" starttime="20220617 03:18:38.834" endtime="20220617 03:18:39.008"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${Type_Of_User}</arg>
+<arg>${UserType}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220617 03:18:39.011" level="INFO">Selecting options from selection list '//select[@class="form-control"]' by label Teacher.</msg>
+<status status="PASS" starttime="20220617 03:18:39.009" endtime="20220617 03:18:39.203"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SignIn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220617 03:18:39.204" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20220617 03:18:39.203" endtime="20220617 03:18:39.369"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${bool}</var>
+<arg>Capture Error Message</arg>
+<arg>${Error_Message_Displayed}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Capture Error Message" library="Resources">
+<arg>${Error_Message_Displayed}</arg>
+<doc>This Keyword will capture Error Message</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Error}</arg>
+<arg>3</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20220617 03:19:16.452" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220617 03:19:16.457" level="FAIL">Element '//div[@class="alert alert-danger col-md-12"]' not visible after 3 seconds.</msg>
+<status status="FAIL" starttime="20220617 03:18:39.371" endtime="20220617 03:19:16.458"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Error_Message}</var>
+<arg>${Error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220617 03:19:16.459" endtime="20220617 03:19:16.459"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Error_Message}</arg>
+<arg>${Error_Message_Displayed}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20220617 03:19:16.460" endtime="20220617 03:19:16.460"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Error_Message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220617 03:19:16.460" endtime="20220617 03:19:16.461"/>
+</kw>
+<status status="FAIL" starttime="20220617 03:18:39.370" endtime="20220617 03:19:16.462"/>
+</kw>
+<msg timestamp="20220617 03:19:16.463" level="INFO">${bool} = False</msg>
+<status status="PASS" starttime="20220617 03:18:39.369" endtime="20220617 03:19:16.463"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${bool}</arg>
+<arg>Log</arg>
+<arg>Unsuccessful Login</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Successful Login</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Successful Login</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220617 03:19:16.465" level="INFO">Successful Login</msg>
+<status status="PASS" starttime="20220617 03:19:16.464" endtime="20220617 03:19:16.465"/>
+</kw>
+<status status="PASS" starttime="20220617 03:19:16.463" endtime="20220617 03:19:16.465"/>
+</kw>
+<status status="PASS" starttime="20220617 03:18:37.297" endtime="20220617 03:19:16.466"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220617 03:19:16.466" endtime="20220617 03:19:19.905"/>
+</kw>
+<doc>Test Case for Login</doc>
+<tag>SmokeDemo2</tag>
+<status status="PASS" starttime="20220617 03:18:29.772" endtime="20220617 03:19:19.906"/>
+</test>
+<doc>This page is for testing</doc>
+<status status="PASS" starttime="20220617 03:18:29.001" endtime="20220617 03:19:19.912"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">SmokeDemo2</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestDemo2">TestDemo2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -23,6 +23,7 @@ ${WPass}            Learning
 ${Success}          Success
 ${Failure}          Incorrect username/password.
 ${EMPTY_Failure}    Empty username/password.
+${Dummy_Var}        Dummy Var
 
 
 *** Keywords ***

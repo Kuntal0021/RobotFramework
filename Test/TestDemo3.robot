@@ -8,7 +8,7 @@ Test Setup     Run Keywords     Open Browser    https://rahulshettyacademy.com/l
 Test Teardown    Close All Browsers
 
 *** Variables ***
-
+${New_Variable}     New Variable
 
 
 *** Test Cases ***

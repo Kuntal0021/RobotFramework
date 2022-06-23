@@ -9,6 +9,7 @@ Test Teardown    Close All Browsers
 
 *** Variables ***
 ${New_Variable}     New Variable
+${Local1}           Local 1
 
 
 *** Test Cases ***

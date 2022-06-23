@@ -22,6 +22,7 @@ ${WPass}            Learning
 ${Success}          Success
 ${Failure}          Incorrect username/password.
 ${EMPTY_Failure}    Empty username/password.
+${New_Var}          New Variable
 
 
 *** Keywords ***
@@ -30,7 +31,7 @@ Login To RahulShetty
     [Arguments]    ${uname}     ${pword}    ${Error_Message_Displayed}
     SeleniumLibrary.input text    ${Username}    ${uname}
     SeleniumLibrary.input password    ${Password}   ${pword}
-    SeleniumLibrary.select checkbox    ${TnC}
+    SeleniumLibrary.select checkbox     ${TnC}
     SeleniumLibrary.click button    ${SignIn}
     ${bool}     run keyword and return status    Capture Error Message     ${Error_Message_Displayed}
     run keyword if    ${bool}   Log    Unsuccessful Login

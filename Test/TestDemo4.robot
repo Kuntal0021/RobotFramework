@@ -32,6 +32,8 @@ Login To RahulShetty
     SeleniumLibrary.input text    ${Username}    ${uname}
     SeleniumLibrary.input password    ${Password}   ${pword}
     SeleniumLibrary.select checkbox     ${TnC}
+    SeleniumLibrary.cover element    ${SignIn}
+    sleep    5s
     SeleniumLibrary.click button    ${SignIn}
     ${bool}     run keyword and return status    Capture Error Message     ${Error_Message_Displayed}
     run keyword if    ${bool}   Log    Unsuccessful Login
